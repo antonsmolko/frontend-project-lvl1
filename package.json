@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "![Actions Status](https://github.com/antonsmolko/frontend-project-lvl1/workflows/hexlet-check/badge.svg)",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
   "homepage": "https://github.com/antonsmolko/frontend-project-lvl1#readme",
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "dependencies": {
     "promptly": "^3.1.0"
