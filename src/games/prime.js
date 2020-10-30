@@ -21,6 +21,7 @@ const getAllPrimes = (number) => {
 };
 
 const isPrime = (number) => {
+  if (number <= 1) return false;
   const numberSqrt = Math.floor(Math.sqrt(number));
   const delimeters = getAllPrimes(numberSqrt);
 
