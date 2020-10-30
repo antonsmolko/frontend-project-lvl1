@@ -21,7 +21,7 @@ const getAllPrimes = (number) => {
 };
 
 const isPrime = (number) => {
-  const numberSqrt = ~~Math.sqrt(number);
+  const numberSqrt = Math.floor(Math.sqrt(number));
   const delimeters = getAllPrimes(numberSqrt);
 
   for (let i = 0; i < delimeters.length; i += 1) {
@@ -39,4 +39,4 @@ export default () => {
     clause: number,
     correctAnswer: isPrime(number) ? 'yes' : 'no',
   };
-}
+};

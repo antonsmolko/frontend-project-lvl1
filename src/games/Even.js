@@ -6,6 +6,6 @@ export default () => {
 
   return {
     clause: number,
-    correctAnswer: !Boolean(number % 2) ? 'yes' : 'no',
+    correctAnswer: !(number % 2) ? 'yes' : 'no',
   };
-}
+};

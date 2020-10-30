@@ -10,11 +10,11 @@ export default () => {
   const range = 100;
 
   const a = getRandom(range);
-  const b= getRandom(range);
+  const b = getRandom(range);
   const [min, max] = [a, b].sort();
 
   return {
     clause: `${a} ${b}`,
     correctAnswer: euclideGcd(min, max).toString(),
   };
-}
+};

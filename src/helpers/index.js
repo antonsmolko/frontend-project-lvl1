@@ -1,3 +1,5 @@
-export const getRandom = (range) => {
-  return Math.round(Math.random() * range);
+export const getRandom = (range) => Math.round(Math.random() * range);
+
+export default {
+  getRandom,
 };

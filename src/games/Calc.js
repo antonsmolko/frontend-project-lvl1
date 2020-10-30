@@ -17,4 +17,4 @@ export default () => {
     clause: `${a} ${op} ${b}`,
     correctAnswer: String(calcMap[op](a, b)),
   };
-}
+};

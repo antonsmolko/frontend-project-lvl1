@@ -29,4 +29,4 @@ export default (options = {}) => () => {
     clause: progression.join(' '),
     correctAnswer,
   };
-}
+};

@@ -6,8 +6,9 @@ export default async ({ ruleMessage, game }) => {
   console.log(ruleMessage);
 
   let i = 1;
-  while(i <= 3) {
+  while (i <= 3) {
     const { clause, correctAnswer } = game();
+    // eslint-disable-next-line no-await-in-loop
     const answer = await promptly.prompt(`Question: ${clause}`);
     console.log('You answer:', answer);
 
@@ -23,4 +24,4 @@ export default async ({ ruleMessage, game }) => {
   }
 
   console.log(`Congratulations, ${name}!`);
-}
+};
