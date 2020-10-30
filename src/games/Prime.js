@@ -1,19 +1,42 @@
-import { isPrime, getRandom } from '../helpers/index.js';
+import { getRandom } from '../helpers/index.js';
 
-export default class {
-  constructor(range) {
-    this.range = range;
-  }
+const getAllPrimes = (number) => {
+  const numbers = Array(number).fill(true);
 
-  getNext() {
-    const number = getRandom(this.range);
-    return {
-      clause: number,
-      correctAnswer: this._getCorrectAnswer(number),
+  for (let i = 2; i * i < number; i += 1) {
+    if (numbers[i]) {
+      for (let j = 2 * i; j < number; j += i) {
+        numbers[j] = false;
+      }
     }
   }
 
-  _getCorrectAnswer(number) {
-    return isPrime(number) ? 'yes' : 'no';
+  const primes = [];
+
+  for (let i = 2; i < numbers.length; i += 1) {
+    if (numbers[i]) primes.push(i);
   }
+
+  return primes;
+};
+
+const isPrime = (number) => {
+  const numberSqrt = ~~Math.sqrt(number);
+  const delimeters = getAllPrimes(numberSqrt);
+
+  for (let i = 0; i < delimeters.length; i += 1) {
+    if (number % delimeters[i] === 0) return false;
+  }
+
+  return true;
+};
+
+export default () => {
+  const range = 100;
+  const number = getRandom(range);
+
+  return {
+    clause: number,
+    correctAnswer: isPrime(number) ? 'yes' : 'no',
+  };
 }

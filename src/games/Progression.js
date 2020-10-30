@@ -1,33 +1,32 @@
-import { getRandom, getProgression } from '../helpers/index.js';
+import { getRandom } from '../helpers/index.js';
 
-export default class {
-  constructor({ startRange = 0, stepRange = 3, sequenceRange = 10 }) {
-    this.startRange = startRange;
-    this.stepRange = stepRange;
-    this.sequenceRange = sequenceRange;
+const getProgression = (start, step, length) => {
+  const result = [];
+  for (let i = 0; i < length; i += 1) {
+    const next = i === 0 ? start : result[i - 1] + step;
+    result.push(next);
   }
 
-  getNext() {
-    const { progression, hiddenIndex } = this._getNextOptions();
-    const correctAnswer = progression
-      .splice(hiddenIndex, 1, '..')
-      .toString();
-    const clause = progression.join(' ');
+  return result;
+};
 
-    return {
-      clause,
-      correctAnswer,
-    }
-  }
+export default (options = {}) => () => {
+  const startRange = options?.startRange || 0;
+  const stepRange = options?.stepRange || 10;
+  const sequenceRange = options?.secuenceRange || 10;
 
-  _getNextOptions() {
-    const start = getRandom(this.startRange);
-    const step = getRandom(this.stepRange);
-    const randomSequenceLength = getRandom(this.sequenceRange);
-    const length = randomSequenceLength >= 5 ? randomSequenceLength : 5;
-    return {
-      progression: getProgression(start, step, length),
-      hiddenIndex: getRandom(length - 1),
-    };
-  }
+  const randomStart = getRandom(startRange);
+  const randomStep = getRandom(stepRange);
+  const randomSequenceLength = getRandom(sequenceRange);
+  const sequenceLength = randomSequenceLength >= 5 ? randomSequenceLength : 5;
+  const progression = getProgression(randomStart, randomStep, sequenceRange);
+  const hiddenIndex = getRandom(sequenceLength - 1);
+  const correctAnswer = progression
+    .splice(hiddenIndex, 1, '..')
+    .toString();
+
+  return {
+    clause: progression.join(' '),
+    correctAnswer,
+  };
 }

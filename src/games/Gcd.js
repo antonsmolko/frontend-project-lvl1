@@ -1,21 +1,20 @@
-import { euclideGcd, getRandom } from '../helpers/index.js';
+import { getRandom } from '../helpers/index.js';
 
-export default class {
-  constructor(range) {
-    this.range = range;
-  }
+const euclideGcd = (min, max) => {
+  const diff = max % min;
+  if (diff === 0) return min;
+  return euclideGcd(diff, min);
+};
 
-  getNext() {
-    const a = getRandom(this.range);
-    const b = getRandom(this.range);
-    return {
-      clause: `${a} ${b}`,
-      correctAnswer: this._getCorrectAnswer(a, b),
-    }
-  }
+export default () => {
+  const range = 100;
 
-  _getCorrectAnswer(a, b) {
-    const [min, max] = [a, b].sort();
-    return euclideGcd(min, max).toString();
-  }
+  const a = getRandom(range);
+  const b= getRandom(range);
+  const [min, max] = [a, b].sort();
+
+  return {
+    clause: `${a} ${b}`,
+    correctAnswer: euclideGcd(min, max).toString(),
+  };
 }

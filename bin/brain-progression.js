@@ -1,17 +1,14 @@
 #!/usr/bin/env node
+import progression from '../src/games/progression.js';
+import engine from '../src/index.js';
 
-import greeting from '../src/greeting.js';
-import Progression from '../src/games/Progression.js';
-import engine from '../src/engine.js';
-
-const game = new Progression({
-  startRange: 20,
-  stepRange: 10,
-  sequenceRange: 15
+const game = progression({
+  startRange: 40,
+  stepRange: 50,
+  sequenceRange: 7,
 });
 
-(async () => {
-  const name = await greeting();
-  console.log('What number is missing in the progression?');
-  await engine({ name, game, stepCount: 3});
-})();
+engine({
+  ruleMessage: 'What number is missing in the progression?',
+  game,
+});
