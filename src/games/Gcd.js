@@ -1,4 +1,4 @@
-const getRandom = (range) => Math.round(Math.random() * range);
+import { getRandom } from '../helpers.js';
 
 const euclideGcd = (min, max) => {
   const diff = max % min;
