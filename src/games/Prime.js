@@ -1,4 +1,4 @@
-import { getRandom } from '../helpers/index.js';
+const getRandom = (range) => Math.round(Math.random() * range);
 
 const getAllPrimes = (number) => {
   const numbers = Array(number).fill(true);
