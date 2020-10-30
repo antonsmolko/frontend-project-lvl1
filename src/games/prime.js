@@ -1,32 +1,14 @@
 import { getRandom } from '../helpers.js';
 
-const getAllPrimes = (number) => {
-  const numbers = Array(number).fill(true);
-
-  for (let i = 2; i * i < number; i += 1) {
-    if (numbers[i]) {
-      for (let j = 2 * i; j < number; j += i) {
-        numbers[j] = false;
-      }
-    }
-  }
-
-  const primes = [];
-
-  for (let i = 2; i < numbers.length; i += 1) {
-    if (numbers[i]) primes.push(i);
-  }
-
-  return primes;
-};
-
 const isPrime = (number) => {
-  if (number <= 1) return false;
-  const numberSqrt = Math.floor(Math.sqrt(number));
-  const delimeters = getAllPrimes(numberSqrt);
+  if (number < 2) return false;
 
-  for (let i = 0; i < delimeters.length; i += 1) {
-    if (number % delimeters[i] === 0) return false;
+  if (number % 2 === 0) return number === 2;
+
+  if (number % 3 === 0) return number === 3;
+
+  for (let i = 5; i * i <= number; i += 6) {
+    if (number % i === 0 || number % (i + 2) === 0) return false;
   }
 
   return true;
