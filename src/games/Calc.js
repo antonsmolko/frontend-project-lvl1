@@ -1,3 +1,5 @@
+import { getRandom } from '../helpers/index.js';
+
 export default class {
   constructor(range) {
     this.range = range;
@@ -10,9 +12,9 @@ export default class {
   }
 
   getNext() {
-    const op = this.operations[this._getRandom(this.operations.length - 1)];
-    const a = this._getRandom(this.range);
-    const b = this._getRandom(this.range);
+    const op = this.operations[getRandom(this.operations.length - 1)];
+    const a = getRandom(this.range);
+    const b = getRandom(this.range);
 
     return {
       clause: `${a} ${op} ${b}`,
@@ -22,9 +24,5 @@ export default class {
 
   _getCorrectAnswer(a, b, op) {
     return String(this.calcMap[op](a, b));
-  }
-
-  _getRandom(range) {
-    return Math.round(Math.random() * range);
   }
 }
