@@ -11,9 +11,9 @@ const getProgression = (start, step, length) => {
 };
 
 export default (options = {}) => () => {
-  const startRange = options?.startRange || 0;
-  const stepRange = options?.stepRange || 10;
-  const sequenceRange = options?.secuenceRange || 10;
+  const startRange = options?.startRange ?? 0;
+  const stepRange = options?.stepRange ?? 10;
+  const sequenceRange = options?.secuenceRange ?? 10;
 
   const randomStart = getRandom(startRange);
   const randomStep = getRandom(stepRange);
