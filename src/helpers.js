@@ -1,4 +1,6 @@
-export const getRandom = (range) => Math.round(Math.random() * range);
+export const getRandom = (range, min = 0) => (
+  Math.round(Math.random() * (range - min) + min)
+);
 
 export default {
   getRandom,

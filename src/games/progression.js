@@ -10,16 +10,12 @@ const getProgression = (start, step, length) => {
   return result;
 };
 
-export default () => {
-  const startRange = 30;
-  const stepRange = 20;
-  const sequenceRange = 15;
+export default ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) => {
+  const start = getRandom(startRange);
+  const step = getRandom(stepRange, 3);
+  const sequenceLength = getRandom(sequenceRange, 5);
 
-  const randomStart = getRandom(startRange);
-  const randomStep = getRandom(stepRange);
-  const randomSequenceLength = getRandom(sequenceRange);
-  const sequenceLength = randomSequenceLength >= 5 ? randomSequenceLength : 5;
-  const progression = getProgression(randomStart, randomStep, sequenceRange);
+  const progression = getProgression(start, step, sequenceLength);
   const hiddenIndex = getRandom(sequenceLength - 1);
   const correctAnswer = progression
     .splice(hiddenIndex, 1, '..')
