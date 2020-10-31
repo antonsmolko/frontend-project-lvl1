@@ -1,5 +1,12 @@
 import promptly from 'promptly';
 
+/**
+ * Game engine
+ *
+ * @param {Object} options
+ * @param {string} options.ruleMessage game rule description
+ * @param {function} options.game function with logic of the specific engine
+ */
 export default async ({ ruleMessage, game }) => {
   const name = await promptly.prompt('May I have your name?');
   console.log('Hello,', name);

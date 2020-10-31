@@ -1,5 +1,14 @@
 import { getRandom } from '../helpers.js';
 
+/**
+ * Returns a random arithmetic progression
+ *
+ * @param {number} start a number at which the arithmetic progression starts
+ * @param {number} step a value of arithmetic progression step
+ * @param {number} length a value of arithmetic progression length
+ *
+ * @return {array} an array whose values a numbers forming an arithmetic progression
+ */
 const getProgression = (start, step, length) => {
   const result = [];
   for (let i = 0; i < length; i += 1) {
@@ -10,6 +19,20 @@ const getProgression = (start, step, length) => {
   return result;
 };
 
+/**
+ * Brains Progression
+ * the user has to calculate the missing value
+ * of the arithmetic progression
+ *
+ * @param {Object} options
+ * @param {number} options.startRange range of valid values for the beginning of a sequence
+ * @param {number} options.stepRange range of valid values for the step of a sequence
+ * @param {number} options.sequenceRange range of valid values for the length of a sequence
+ *
+ * @returns {Object} next round game state
+ * @returns {string} round condition: arithmetic progression with random hidden element
+ * @returns {string} round correct answer: value of hidden element
+ */
 export default ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) => {
   const start = getRandom(startRange);
   const step = getRandom(stepRange, 3);

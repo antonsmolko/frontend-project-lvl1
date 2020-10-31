@@ -1,5 +1,11 @@
 import { getRandom } from '../helpers.js';
 
+/**
+ * Determines whether a number is prime
+ *
+ * @param {number} number
+ * @return {boolean}
+ */
 const isPrime = (number) => {
   if (number < 2) return false;
   if (number % 2 === 0) return number === 2;
@@ -12,6 +18,16 @@ const isPrime = (number) => {
   return true;
 };
 
+/**
+ * Brains Prime
+ * the user must determine if the number is prime
+ *
+ * @param {number} range rande of valid values of numbers from 0
+ *
+ * @returns {Object} next round game state
+ * @returns {number} round condition: random number
+ * @returns {string} round correct answer: 'yes', 'no'
+ */
 export default (range = 100) => {
   const number = getRandom(range, 2);
 
