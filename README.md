@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/antonsmolko/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/antonsmolko/frontend-project-lvl1/actions?query=workflow%3Ahexlet-check)
-[![Actions Status](https://github.com/antonsmolko/frontend-project-lvl1/workflows/ci/badge.svg)](https://github.com/antonsmolko/frontend-project-lvl1/actions?query=workflow%3Alint)
+[![Actions Status](https://github.com/antonsmolko/frontend-project-lvl1/workflows/test/badge.svg)](https://github.com/antonsmolko/frontend-project-lvl1/actions?query=workflow%3Atest)
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
 # Brain Games
