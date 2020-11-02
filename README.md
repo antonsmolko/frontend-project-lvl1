@@ -107,7 +107,7 @@ It's as simple as that!
 
 Learn more at:
 
-## Brain Even
+## Brains Even
 
 ```sh
 $ brains-even
@@ -121,7 +121,7 @@ $ Answer "yes" if the number is even, otherwise answer "no"
 
 [![asciicast](https://asciinema.org/a/C9DEDkPjjdc4QIjAGNvOMPFo2.svg)](https://asciinema.org/a/C9DEDkPjjdc4QIjAGNvOMPFo2)
 
-## Brain Calc
+## Brains Calc
 
 ```sh
 $ brains-calc
@@ -137,7 +137,7 @@ $ What is the result of the expression?
 
 [![asciicast](https://asciinema.org/a/TzTqoP1Jn65cR1pHsNIAG5C4O.svg)](https://asciinema.org/a/TzTqoP1Jn65cR1pHsNIAG5C4O)
 
-## Brain GCD
+## Brains GCD
 
 ```sh
 $ brains-gcd
@@ -151,7 +151,7 @@ $ What is the result of the expression?
 
 [![asciicast](https://asciinema.org/a/lSRboCe7RtdruemOa8q5tBjfC.svg)](https://asciinema.org/a/lSRboCe7RtdruemOa8q5tBjfC)
 
-## Brain Progression
+## Brains Progression
 
 ```sh
 $ brains-progression
@@ -165,7 +165,7 @@ $ What number is missing in the progression?
 
 [![asciicast](https://asciinema.org/a/F1uXNyj5dI9CgbsBwbp8Y2U0L.svg)](https://asciinema.org/a/F1uXNyj5dI9CgbsBwbp8Y2U0L)
 
-## Brain Prime
+## Brains Prime
 
 ```sh
 $ brains-prime
