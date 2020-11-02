@@ -48,17 +48,6 @@ $ May i have your name?
 You will need to enter your name
 
 For example:
-```
-$ May i have your name? Anton
-```
-
-Then the game will greet you
-
-```
-$ Hello, Anton!
-```
-
-For example:
 
 ```sh
 $ brains-even
