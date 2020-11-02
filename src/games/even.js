@@ -1,3 +1,4 @@
+import engine from '../index.js';
 import { getRandom } from '../helpers.js';
 
 /**
@@ -10,11 +11,16 @@ import { getRandom } from '../helpers.js';
  * @returns {number} round condition: random number
  * @returns {string} round correct answer: 'yes', 'no'
  */
-export default (range = 100) => {
+const getRound = (range = 100) => {
   const number = getRandom(range);
 
   return {
-    clause: number,
+    question: number,
     correctAnswer: !(number % 2) ? 'yes' : 'no',
   };
 };
+
+export default engine(
+  getRound,
+  'Answer "yes" if the number is even, otherwise answer "no".',
+);

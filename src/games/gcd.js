@@ -1,3 +1,4 @@
+import engine from '../index.js';
 import { getRandom } from '../helpers.js';
 
 /**
@@ -26,13 +27,18 @@ const getGcd = (min, max) => {
  * @returns {string} round condition: two random numbers
  * @returns {string} round correct answer: greatest common divisor of these numbers
  */
-export default (range = 100) => {
+const getRound = (range = 100) => {
   const a = getRandom(range, 1);
   const b = getRandom(range, 1);
   const [min, max] = [a, b].sort();
 
   return {
-    clause: `${a} ${b}`,
+    question: `${a} ${b}`,
     correctAnswer: getGcd(min, max).toString(),
   };
 };
+
+export default engine(
+  getRound,
+  'Find the greatest common divisor of given numbers.',
+);

@@ -1,33 +1,40 @@
 import promptly from 'promptly';
 
 /**
+ * Return the result of checking whether user's answer is correct
+ * @param {*} answer user answer
+ * @param {*} corrected corrected answer
+ * @return {boolean}
+ */
+const isCorrectAnswer = (answer, corrected) => answer === corrected;
+
+/**
  * Game engine
  *
  * @param {Object} options
  * @param {string} options.ruleMessage game rule description
  * @param {function} options.game function with logic of the specific engine
  */
-export default async ({ ruleMessage, game }) => {
+export default (round, descriptions) => async () => {
   const name = await promptly.prompt('May I have your name?');
-  console.log('Hello,', name);
-  console.log(ruleMessage);
+  console.log(`Hello, ${name}!`);
+  console.log(descriptions);
 
-  let i = 1;
-  while (i <= 3) {
-    const { clause, correctAnswer } = game();
+  const roundsCount = 3;
+
+  for (let i = 1; i <= roundsCount; i += 1) {
+    const { question, correctAnswer } = round();
     // eslint-disable-next-line no-await-in-loop
-    const answer = await promptly.prompt(`Question: ${clause}`);
+    const answer = await promptly.prompt(`Question: ${question}`);
     console.log('You answer:', answer);
 
-    const answerIsCorrect = answer === correctAnswer;
-    const resultMessage = answerIsCorrect
-      ? 'Correct!'
-      : `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`;
-
-    console.log(resultMessage);
-
-    if (!answerIsCorrect) return;
-    i += 1;
+    if (isCorrectAnswer(answer, correctAnswer)) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
   }
 
   console.log(`Congratulations, ${name}!`);

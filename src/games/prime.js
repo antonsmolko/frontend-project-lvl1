@@ -1,3 +1,4 @@
+import engine from '../index.js';
 import { getRandom } from '../helpers.js';
 
 /**
@@ -28,11 +29,16 @@ const isPrime = (number) => {
  * @returns {number} round condition: random number
  * @returns {string} round correct answer: 'yes', 'no'
  */
-export default (range = 100) => {
+const getRound = (range = 100) => {
   const number = getRandom(range, 2);
 
   return {
-    clause: number,
+    question: number,
     correctAnswer: isPrime(number) ? 'yes' : 'no',
   };
 };
+
+export default engine(
+  getRound,
+  'Answer "yes" if given number is prime. Otherwise answer "no".',
+);

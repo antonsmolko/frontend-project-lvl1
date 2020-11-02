@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
 import progression from '../src/games/progression.js';
-import engine from '../src/index.js';
+import { gameWrapper } from '../src/helpers.js';
 
-engine({
-  ruleMessage: 'What number is missing in the progression?',
-  game: progression,
-});
+gameWrapper(progression);

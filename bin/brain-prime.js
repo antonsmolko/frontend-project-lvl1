@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
 import prime from '../src/games/prime.js';
-import engine from '../src/index.js';
+import { gameWrapper } from '../src/helpers.js';
 
-engine({
-  ruleMessage: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-  game: prime,
-});
+gameWrapper(prime);

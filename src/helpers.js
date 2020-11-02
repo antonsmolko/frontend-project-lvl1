@@ -10,6 +10,11 @@ export const getRandom = (range, min = 0) => (
   Math.round(Math.random() * (range - min) + min)
 );
 
+export const gameWrapper = (game) => {
+  game().catch(() => console.log('exit'));
+};
+
 export default {
   getRandom,
+  gameWrapper,
 };

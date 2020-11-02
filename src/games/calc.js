@@ -1,3 +1,4 @@
+import engine from '../index.js';
 import { getRandom } from '../helpers.js';
 
 /**
@@ -10,7 +11,7 @@ import { getRandom } from '../helpers.js';
  * @returns {string} round condition: mathematical expression
  * @returns {string} round correct answer: the result of evaluating an expression
  */
-export default (range = 100) => {
+const getRound = (range = 100) => {
   const calcMap = {
     '+': (a, b) => a + b,
     '-': (a, b) => a - b,
@@ -23,7 +24,12 @@ export default (range = 100) => {
   const b = getRandom(range);
 
   return {
-    clause: `${a} ${op} ${b}`,
+    question: `${a} ${op} ${b}`,
     correctAnswer: String(calcMap[op](a, b)),
   };
 };
+
+export default engine(
+  getRound,
+  'What is the result of the expression?',
+);

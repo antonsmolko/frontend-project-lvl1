@@ -1,3 +1,4 @@
+import engine from '../index.js';
 import { getRandom } from '../helpers.js';
 
 /**
@@ -33,7 +34,7 @@ const getProgression = (start, step, length) => {
  * @returns {string} round condition: arithmetic progression with random hidden element
  * @returns {string} round correct answer: value of hidden element
  */
-export default ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) => {
+const getRound = ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) => {
   const start = getRandom(startRange);
   const step = getRandom(stepRange, 3);
   const sequenceLength = getRandom(sequenceRange, 5);
@@ -45,7 +46,12 @@ export default ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) =>
     .toString();
 
   return {
-    clause: progression.join(' '),
+    question: progression.join(' '),
     correctAnswer,
   };
 };
+
+export default engine(
+  getRound,
+  'What number is missing in the progression?',
+);
