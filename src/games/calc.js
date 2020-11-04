@@ -46,7 +46,7 @@ const generateRound = (range = 100) => {
 
   return {
     question: `${num1} ${operation} ${num2}`,
-    expectedAnswer: String(getAnswer(num1, num2, operation)),
+    expectedAnswer: getAnswer(num1, num2, operation).toString(),
   };
 };
 

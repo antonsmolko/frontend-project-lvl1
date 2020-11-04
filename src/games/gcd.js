@@ -28,13 +28,13 @@ const getGcd = (min, max) => {
  * @returns {string} round correct answer: greatest common divisor of these numbers
  */
 const generateRound = (range = 100) => {
-  const a = getRandom(range, 1);
-  const b = getRandom(range, 1);
-  const [min, max] = [a, b].sort();
+  const num1 = getRandom(range, 1);
+  const num2 = getRandom(range, 1);
+  const [min, max] = [num1, num2].sort();
 
   return {
-    question: `${a} ${b}`,
-    correctAnswer: getGcd(min, max).toString(),
+    question: `${num1} ${num2}`,
+    expectedAnswer: getGcd(min, max).toString(),
   };
 };
 
