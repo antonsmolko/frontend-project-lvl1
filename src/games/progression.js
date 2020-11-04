@@ -32,29 +32,26 @@ const description = 'What number is missing in the progression?';
  * the user has to calculate the missing value
  * of the arithmetic progression
  *
- * @param {Object} options
- * @param {number} options.startRange range of valid values for the beginning of a sequence
- * @param {number} options.stepRange range of valid values for the step of a sequence
- * @param {number} options.sequenceRange range of valid values for the length of a sequence
+ * @param {number} sequenceRange range of valid values for the length of a sequence
  *
  * @returns {Object} next round game state
  * @returns {string} round condition: arithmetic progression with random hidden element
  * @returns {string} round correct answer: value of hidden element
  */
-const generateRound = ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) => {
-  const start = getRandom(startRange);
-  const step = getRandom(stepRange, 3);
+const generateRound = (sequenceRange = 12) => {
+  const start = getRandom(30);
+  const step = getRandom(20, 3);
   const sequenceLength = getRandom(sequenceRange, 5);
 
   const progression = getProgression(start, step, sequenceLength);
   const hiddenIndex = getRandom(sequenceLength - 1);
-  const correctAnswer = progression
+  const expectedAnswer = progression
     .splice(hiddenIndex, 1, '..')
     .toString();
 
   return {
     question: progression.join(' '),
-    correctAnswer,
+    expectedAnswer,
   };
 };
 
