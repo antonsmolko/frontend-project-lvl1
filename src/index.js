@@ -9,22 +9,26 @@ import promptly from 'promptly';
 const isCorrectAnswer = (answer, corrected) => answer === corrected;
 
 /**
+ * Number of game rounds
+ * @constant {number}
+ */
+const roundsCount = 3;
+
+/**
  * Game engine
  *
  * @param {Object} options
- * @param {string} options.ruleMessage game rule description
- * @param {function} options.game function with logic of the specific engine
+ * @param {function} options.generateRound function with logic of the specific engine
+ * @param {string} options.descriptions game rule description
  */
-export default (round, descriptions) => async () => {
+export default (generateRound, descriptions) => async () => {
   try {
     const name = await promptly.prompt('May I have your name?');
     console.log(`Hello, ${name}!`);
     console.log(descriptions);
 
-    const roundsCount = 3;
-
     for (let i = 1; i <= roundsCount; i += 1) {
-      const { question, correctAnswer } = round();
+      const { question, correctAnswer } = generateRound();
       // eslint-disable-next-line no-await-in-loop
       const answer = await promptly.prompt(`Question: ${question}`);
       console.log('You answer:', answer);
@@ -40,6 +44,6 @@ export default (round, descriptions) => async () => {
 
     console.log(`Congratulations, ${name}!`);
   } catch (error) {
-    console.error('exit');
+    console.log('exit');
   }
 };

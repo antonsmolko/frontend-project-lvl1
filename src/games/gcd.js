@@ -27,7 +27,7 @@ const getGcd = (min, max) => {
  * @returns {string} round condition: two random numbers
  * @returns {string} round correct answer: greatest common divisor of these numbers
  */
-const getRound = (range = 100) => {
+const generateRound = (range = 100) => {
   const a = getRandom(range, 1);
   const b = getRandom(range, 1);
   const [min, max] = [a, b].sort();
@@ -39,6 +39,6 @@ const getRound = (range = 100) => {
 };
 
 export default engine(
-  getRound,
+  generateRound,
   'Find the greatest common divisor of given numbers.',
 );

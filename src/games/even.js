@@ -11,7 +11,7 @@ import getRandom from '../helpers/getRandom.js';
  * @returns {number} round condition: random number
  * @returns {string} round correct answer: 'yes', 'no'
  */
-const getRound = (range = 100) => {
+const generateRound = (range = 100) => {
   const number = getRandom(range);
 
   return {
@@ -21,6 +21,6 @@ const getRound = (range = 100) => {
 };
 
 export default engine(
-  getRound,
+  generateRound,
   'Answer "yes" if the number is even, otherwise answer "no".',
 );

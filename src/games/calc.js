@@ -11,25 +11,25 @@ import getRandom from '../helpers/getRandom.js';
  * @returns {string} round condition: mathematical expression
  * @returns {string} round correct answer: the result of evaluating an expression
  */
-const getRound = (range = 100) => {
+const generateRound = (range = 100) => {
   const calcMap = {
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '*': (a, b) => a * b,
+    '+': (num1, num2) => num1 + num2,
+    '-': (num1, num2) => num1 - num2,
+    '*': (num1, num2) => num1 * num2,
   };
   const operations = Object.keys(calcMap);
 
-  const op = operations[getRandom(operations.length - 1)];
-  const a = getRandom(range);
-  const b = getRandom(range);
+  const operation = operations[getRandom(operations.length - 1)];
+  const num1 = getRandom(range);
+  const num2 = getRandom(range);
 
   return {
-    question: `${a} ${op} ${b}`,
-    correctAnswer: String(calcMap[op](a, b)),
+    question: `${num1} ${operation} ${num2}`,
+    correctAnswer: String(calcMap[operation](num1, num2)),
   };
 };
 
 export default engine(
-  getRound,
+  generateRound,
   'What is the result of the expression?',
 );

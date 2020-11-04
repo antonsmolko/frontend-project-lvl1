@@ -34,7 +34,7 @@ const getProgression = (start, step, length) => {
  * @returns {string} round condition: arithmetic progression with random hidden element
  * @returns {string} round correct answer: value of hidden element
  */
-const getRound = ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) => {
+const generateRound = ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) => {
   const start = getRandom(startRange);
   const step = getRandom(stepRange, 3);
   const sequenceLength = getRandom(sequenceRange, 5);
@@ -52,6 +52,6 @@ const getRound = ({ startRange = 30, stepRange = 20, sequenceRange = 12 } = {}) 
 };
 
 export default engine(
-  getRound,
+  generateRound,
   'What number is missing in the progression?',
 );
