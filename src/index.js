@@ -1,14 +1,6 @@
 import promptly from 'promptly';
 
 /**
- * Return the result of checking whether user's answer is correct
- * @param {*} answer user answer
- * @param {*} corrected corrected answer
- * @return {boolean}
- */
-const isCorrectAnswer = (answer, corrected) => answer === corrected;
-
-/**
  * Number of game rounds
  * @constant {number}
  */
@@ -28,15 +20,15 @@ export default (generateRound, descriptions) => async () => {
     console.log(descriptions);
 
     for (let i = 1; i <= roundsCount; i += 1) {
-      const { question, correctAnswer } = generateRound();
+      const { question, expectedAnswer } = generateRound();
       // eslint-disable-next-line no-await-in-loop
-      const answer = await promptly.prompt(`Question: ${question}`);
-      console.log('You answer:', answer);
+      const userAnswer = await promptly.prompt(`Question: ${question}`);
+      console.log('You answer:', userAnswer);
 
-      if (isCorrectAnswer(answer, correctAnswer)) {
+      if (userAnswer === expectedAnswer) {
         console.log('Correct!');
       } else {
-        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+        console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${expectedAnswer}".`);
         console.log(`Let's try again, ${name}!`);
         return;
       }
