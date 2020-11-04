@@ -16,26 +16,30 @@ const isCorrectAnswer = (answer, corrected) => answer === corrected;
  * @param {function} options.game function with logic of the specific engine
  */
 export default (round, descriptions) => async () => {
-  const name = await promptly.prompt('May I have your name?');
-  console.log(`Hello, ${name}!`);
-  console.log(descriptions);
+  try {
+    const name = await promptly.prompt('May I have your name?');
+    console.log(`Hello, ${name}!`);
+    console.log(descriptions);
 
-  const roundsCount = 3;
+    const roundsCount = 3;
 
-  for (let i = 1; i <= roundsCount; i += 1) {
-    const { question, correctAnswer } = round();
-    // eslint-disable-next-line no-await-in-loop
-    const answer = await promptly.prompt(`Question: ${question}`);
-    console.log('You answer:', answer);
+    for (let i = 1; i <= roundsCount; i += 1) {
+      const { question, correctAnswer } = round();
+      // eslint-disable-next-line no-await-in-loop
+      const answer = await promptly.prompt(`Question: ${question}`);
+      console.log('You answer:', answer);
 
-    if (isCorrectAnswer(answer, correctAnswer)) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      console.log(`Let's try again, ${name}!`);
-      return;
+      if (isCorrectAnswer(answer, correctAnswer)) {
+        console.log('Correct!');
+      } else {
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+        console.log(`Let's try again, ${name}!`);
+        return;
+      }
     }
-  }
 
-  console.log(`Congratulations, ${name}!`);
+    console.log(`Congratulations, ${name}!`);
+  } catch (error) {
+    console.error('exit');
+  }
 };

@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import { getRandom } from '../helpers.js';
+import getRandom from '../helpers/getRandom.js';
 
 /**
  * Brains Even

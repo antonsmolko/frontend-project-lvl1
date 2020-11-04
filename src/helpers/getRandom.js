@@ -6,15 +6,6 @@
  *
  * @return {number} random number
  */
-export const getRandom = (range, min = 0) => (
+export default (range, min = 0) => (
   Math.round(Math.random() * (range - min) + min)
 );
-
-/**
- * Game engine wrapper function
- *
- * @param {function} engine function with game engine
- */
-export const gameWrapper = (engine) => {
-  engine().catch(() => console.log('exit'));
-};

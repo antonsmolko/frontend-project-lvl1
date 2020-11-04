@@ -20,13 +20,6 @@ The package including the following games:
 ```sh
 $ make install
 
-$ chmod +x \
-bin/brain-even.js \
-bin/brain-calc.js \
-bin/brain-gcd.js \
-bin/brain-progression.js \
-bin/brain-prime.js
-
 $ make publish
 
 $ sudo npm link
@@ -37,7 +30,7 @@ To start in the terminal enter the name of the game
 For example:
 
 ```sh
-$ brains-even # brains-even brains-calc brains-gcd brains-progression brains-prime
+$ brain-even # brains-even brains-calc brains-gcd brains-progression brains-prime
 ```
 
 At the start of each game you will be asked to enter you name:
@@ -50,7 +43,7 @@ You will need to enter your name
 For example:
 
 ```sh
-$ brains-even
+$ brain-even
 
 $ May i have your name?
 ```
@@ -107,10 +100,10 @@ It's as simple as that!
 
 Learn more at:
 
-## Brains Even
+## Brain Even
 
 ```sh
-$ brains-even
+$ brain-even
 ```
 Game rule:
 ```
@@ -121,10 +114,10 @@ $ Answer "yes" if the number is even, otherwise answer "no"
 
 [![asciicast](https://asciinema.org/a/C9DEDkPjjdc4QIjAGNvOMPFo2.svg)](https://asciinema.org/a/C9DEDkPjjdc4QIjAGNvOMPFo2)
 
-## Brains Calc
+## Brain Calc
 
 ```sh
-$ brains-calc
+$ brain-calc
 ```
 Game rule:
 ```
@@ -137,10 +130,10 @@ $ What is the result of the expression?
 
 [![asciicast](https://asciinema.org/a/TzTqoP1Jn65cR1pHsNIAG5C4O.svg)](https://asciinema.org/a/TzTqoP1Jn65cR1pHsNIAG5C4O)
 
-## Brains GCD
+## Brain GCD
 
 ```sh
-$ brains-gcd
+$ brain-gcd
 ```
 Game rule:
 ```
@@ -151,10 +144,10 @@ $ What is the result of the expression?
 
 [![asciicast](https://asciinema.org/a/lSRboCe7RtdruemOa8q5tBjfC.svg)](https://asciinema.org/a/lSRboCe7RtdruemOa8q5tBjfC)
 
-## Brains Progression
+## Brain Progression
 
 ```sh
-$ brains-progression
+$ brain-progression
 ```
 Game rule:
 ```
@@ -165,10 +158,10 @@ $ What number is missing in the progression?
 
 [![asciicast](https://asciinema.org/a/F1uXNyj5dI9CgbsBwbp8Y2U0L.svg)](https://asciinema.org/a/F1uXNyj5dI9CgbsBwbp8Y2U0L)
 
-## Brains Prime
+## Brain Prime
 
 ```sh
-$ brains-prime
+$ brain-prime
 ```
 Game rule:
 ```
