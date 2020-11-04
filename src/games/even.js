@@ -13,10 +13,11 @@ import getRandom from '../helpers/getRandom.js';
  */
 const generateRound = (range = 100) => {
   const number = getRandom(range);
+  const isEven = (num) => num % 2 === 0;
 
   return {
     question: number,
-    correctAnswer: !(number % 2) ? 'yes' : 'no',
+    expectedAnswer: isEven(number) ? 'yes' : 'no',
   };
 };
 
