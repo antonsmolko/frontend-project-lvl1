@@ -5,6 +5,7 @@ import getRandom from '../helpers/getRandom.js';
  * Determines whether a number is prime
  *
  * @param {number} number
+ *
  * @return {boolean}
  */
 const isPrime = (number) => {
@@ -18,6 +19,13 @@ const isPrime = (number) => {
 
   return true;
 };
+
+/**
+ * Game description
+ *
+ * @constant {string}
+ */
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 /**
  * Brains Prime
@@ -34,11 +42,11 @@ const generateRound = (range = 100) => {
 
   return {
     question: number,
-    correctAnswer: isPrime(number) ? 'yes' : 'no',
+    expectedAnswer: isPrime(number) ? 'yes' : 'no',
   };
 };
 
 export default engine(
   generateRound,
-  'Answer "yes" if given number is prime. Otherwise answer "no".',
+  description,
 );

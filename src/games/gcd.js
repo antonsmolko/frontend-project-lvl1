@@ -17,6 +17,13 @@ const getGcd = (min, max) => {
 };
 
 /**
+ * Game description
+ *
+ * @constant {string}
+ */
+const description = 'Find the greatest common divisor of given numbers.';
+
+/**
  * Brains GCD
  * the user must calculate the greatest common divisor
  * of two numbers
@@ -40,5 +47,5 @@ const generateRound = (range = 100) => {
 
 export default engine(
   generateRound,
-  'Find the greatest common divisor of given numbers.',
+  description,
 );

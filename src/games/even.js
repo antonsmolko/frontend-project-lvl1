@@ -2,6 +2,13 @@ import engine from '../index.js';
 import getRandom from '../helpers/getRandom.js';
 
 /**
+ * Game description
+ *
+ * @constant {string}
+ */
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+/**
  * Brains Even
  * the user must determine if the number is even
  *
@@ -23,5 +30,5 @@ const generateRound = (range = 100) => {
 
 export default engine(
   generateRound,
-  'Answer "yes" if the number is even, otherwise answer "no".',
+  description,
 );

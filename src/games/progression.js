@@ -21,6 +21,13 @@ const getProgression = (start, step, length) => {
 };
 
 /**
+ * Game description
+ *
+ * @constant {string}
+ */
+const description = 'What number is missing in the progression?';
+
+/**
  * Brains Progression
  * the user has to calculate the missing value
  * of the arithmetic progression
@@ -53,5 +60,5 @@ const generateRound = ({ startRange = 30, stepRange = 20, sequenceRange = 12 } =
 
 export default engine(
   generateRound,
-  'What number is missing in the progression?',
+  description,
 );

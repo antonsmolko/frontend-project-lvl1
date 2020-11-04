@@ -27,6 +27,13 @@ const getAnswer = (num1, num2, operation) => (
 );
 
 /**
+ * Game description
+ *
+ * @constant {string}
+ */
+const description = 'What is the result of the expression?';
+
+/**
  * Brains Calc
  * the user must solve the expression
  *
@@ -52,5 +59,5 @@ const generateRound = (range = 100) => {
 
 export default engine(
   generateRound,
-  'What is the result of the expression?',
+  description,
 );
