@@ -34,14 +34,14 @@ const getAnswer = (num1, num2, operation) => (
 const description = 'What is the result of the expression?';
 
 /**
- * Brains Calc
+ * Brain Calc
  * the user must solve the expression
  *
  * @param {number} range rande of valid values of numbers from 0
  *
  * @returns {Object} next round game state
  * @returns {string} round condition: mathematical expression
- * @returns {string} round correct answer: the result of evaluating an expression
+ * @returns {string} round expected answer: the result of evaluating an expression
  */
 const generateRound = (range = 100) => {
   const operations = Object.keys(calcMap);

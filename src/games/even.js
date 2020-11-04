@@ -9,14 +9,14 @@ import getRandom from '../helpers/getRandom.js';
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 /**
- * Brains Even
+ * Brain Even
  * the user must determine if the number is even
  *
  * @param {number} range rande of valid values of numbers from 0
  *
  * @returns {Object} next round game state
  * @returns {number} round condition: random number
- * @returns {string} round correct answer: 'yes', 'no'
+ * @returns {string} round expected answer: 'yes', 'no'
  */
 const generateRound = (range = 100) => {
   const number = getRandom(range);

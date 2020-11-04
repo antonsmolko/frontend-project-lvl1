@@ -28,23 +28,23 @@ const getProgression = (start, step, length) => {
 const description = 'What number is missing in the progression?';
 
 /**
- * Brains Progression
+ * Brain Progression
  * the user has to calculate the missing value
  * of the arithmetic progression
  *
- * @param {number} sequenceRange range of valid values for the length of a sequence
+ * @param {number} progressionRange range of valid values for the length of a sequence
  *
  * @returns {Object} next round game state
  * @returns {string} round condition: arithmetic progression with random hidden element
- * @returns {string} round correct answer: value of hidden element
+ * @returns {string} round expected answer: value of hidden element
  */
-const generateRound = (sequenceRange = 12) => {
+const generateRound = (progressionRange = 12) => {
   const start = getRandom(30);
   const step = getRandom(20, 3);
-  const sequenceLength = getRandom(sequenceRange, 5);
+  const progressionLength = getRandom(progressionRange, 5);
 
-  const progression = getProgression(start, step, sequenceLength);
-  const hiddenIndex = getRandom(sequenceLength - 1);
+  const progression = getProgression(start, step, progressionLength);
+  const hiddenIndex = getRandom(progressionLength - 1);
   const expectedAnswer = progression
     .splice(hiddenIndex, 1, '..')
     .toString();

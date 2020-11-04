@@ -28,14 +28,14 @@ const isPrime = (number) => {
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 /**
- * Brains Prime
+ * Brain Prime
  * the user must determine if the number is prime
  *
  * @param {number} range rande of valid values of numbers from 0
  *
  * @returns {Object} next round game state
  * @returns {number} round condition: random number
- * @returns {string} round correct answer: 'yes', 'no'
+ * @returns {string} round expected answer: 'yes', 'no'
  */
 const generateRound = (range = 100) => {
   const number = getRandom(range, 2);

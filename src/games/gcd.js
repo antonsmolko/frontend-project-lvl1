@@ -24,7 +24,7 @@ const getGcd = (min, max) => {
 const description = 'Find the greatest common divisor of given numbers.';
 
 /**
- * Brains GCD
+ * Brain GCD
  * the user must calculate the greatest common divisor
  * of two numbers
  *
@@ -32,7 +32,7 @@ const description = 'Find the greatest common divisor of given numbers.';
  *
  * @returns {Object} next round game state
  * @returns {string} round condition: two random numbers
- * @returns {string} round correct answer: greatest common divisor of these numbers
+ * @returns {string} round expected answer: greatest common divisor of these numbers
  */
 const generateRound = (range = 100) => {
   const num1 = getRandom(range, 1);
