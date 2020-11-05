@@ -9,6 +9,15 @@ import getRandom from '../helpers/getRandom.js';
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 /**
+ * Return boolen value of the result of comparing a number with an even type
+ *
+ * @param {number} num
+ *
+ * @return {boolean}
+ */
+const isEven = (num) => num % 2 === 0;
+
+/**
  * Brain Even
  * the user must determine if the number is even
  *
@@ -20,7 +29,6 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
  */
 const generateRound = (range = 100) => {
   const number = getRandom(range);
-  const isEven = (num) => num % 2 === 0;
 
   return {
     question: number,
