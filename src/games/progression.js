@@ -10,7 +10,7 @@ import getRandom from '../helpers/getRandom.js';
  *
  * @return {array} an array whose values a numbers forming an arithmetic progression
  */
-const getProgression = (start, step, length) => {
+const generateProgression = (start, step, length) => {
   const result = [];
   for (let i = 0; i < length; i += 1) {
     const next = i === 0 ? start : result[i - 1] + step;
@@ -42,7 +42,7 @@ const generateRound = () => {
   const maxLength = 12;
   const progressionLength = getRandom(maxLength, 5);
 
-  const progression = getProgression(start, step, progressionLength);
+  const progression = generateProgression(start, step, progressionLength);
   const hiddenIndex = getRandom(progressionLength - 1);
   const expectedAnswer = progression
     .splice(hiddenIndex, 1, '..')
