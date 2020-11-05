@@ -28,6 +28,13 @@ const generateProgression = (start, step, length) => {
 const description = 'What number is missing in the progression?';
 
 /**
+ * Max number of element in arithmetic progression
+ *
+ * @const {number}
+ */
+const maxLength = 12;
+
+/**
  * Brain Progression
  * the user has to calculate the missing value
  * of the arithmetic progression
@@ -39,7 +46,6 @@ const description = 'What number is missing in the progression?';
 const generateRound = () => {
   const start = getRandom(30);
   const step = getRandom(20, 3);
-  const maxLength = 12;
   const progressionLength = getRandom(maxLength, 5);
 
   const progression = generateProgression(start, step, progressionLength);
