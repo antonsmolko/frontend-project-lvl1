@@ -32,16 +32,15 @@ const description = 'What number is missing in the progression?';
  * the user has to calculate the missing value
  * of the arithmetic progression
  *
- * @param {number} progressionRange range of valid values for the length of a sequence
- *
  * @returns {Object} next round game state
  * @returns {string} round condition: arithmetic progression with random hidden element
  * @returns {string} round expected answer: value of hidden element
  */
-const generateRound = (progressionRange = 12) => {
+const generateRound = () => {
   const start = getRandom(30);
   const step = getRandom(20, 3);
-  const progressionLength = getRandom(progressionRange, 5);
+  const maxLength = 12;
+  const progressionLength = getRandom(maxLength, 5);
 
   const progression = getProgression(start, step, progressionLength);
   const hiddenIndex = getRandom(progressionLength - 1);
