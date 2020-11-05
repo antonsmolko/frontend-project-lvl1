@@ -14,6 +14,13 @@ const calcMap = {
 };
 
 /**
+ * Returns array of calcMap keys
+ *
+ * @return {array}
+ */
+const operations = Object.keys(calcMap);
+
+/**
  * Returned calculation result
  *
  * @param {number} num1 first number
@@ -44,9 +51,7 @@ const description = 'What is the result of the expression?';
  * @returns {string} round expected answer: the result of evaluating an expression
  */
 const generateRound = (range = 100) => {
-  const operations = Object.keys(calcMap);
   const operationSign = getRandom(operations.length - 1);
-
   const operation = operations[operationSign];
   const num1 = getRandom(range);
   const num2 = getRandom(range);
