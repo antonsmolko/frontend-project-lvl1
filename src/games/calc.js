@@ -51,8 +51,8 @@ const description = 'What is the result of the expression?';
  * @returns {string} round expected answer: the result of evaluating an expression
  */
 const generateRound = (range = 100) => {
-  const operationSign = getRandom(operations.length - 1);
-  const operation = operations[operationSign];
+  const operationIndex = getRandom(operations.length - 1);
+  const operation = operations[operationIndex];
   const num1 = getRandom(range);
   const num2 = getRandom(range);
 
