@@ -28,11 +28,11 @@ const generateProgression = (start, step, length) => {
 const description = 'What number is missing in the progression?';
 
 /**
- * Max number of element in arithmetic progression
+ * Number of element in arithmetic progression
  *
  * @const {number}
  */
-const maxLength = 12;
+const progressionLength = 10;
 
 /**
  * Brain Progression
@@ -46,7 +46,6 @@ const maxLength = 12;
 const generateRound = () => {
   const start = getRandom(30);
   const step = getRandom(20, 3);
-  const progressionLength = getRandom(maxLength, 5);
 
   const progression = generateProgression(start, step, progressionLength);
   const hiddenIndex = getRandom(progressionLength - 1);

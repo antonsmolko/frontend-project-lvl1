@@ -28,6 +28,13 @@ const isPrime = (number) => {
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 /**
+ * Minimum number value
+ *
+ * @constant {number}
+ */
+const minValue = 2;
+
+/**
  * Brain Prime
  * the user must determine if the number is prime
  *
@@ -38,7 +45,7 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
  * @returns {string} round expected answer: 'yes', 'no'
  */
 const generateRound = (range = 100) => {
-  const number = getRandom(range, 2);
+  const number = getRandom(range, minValue);
 
   return {
     question: number,
