@@ -17,13 +17,6 @@ const getGcd = (min, max) => {
 };
 
 /**
- * Minimum number value
- *
- * @constant {number}
- */
-const minValue = 1;
-
-/**
  * Game description
  *
  * @constant {string}
@@ -42,8 +35,8 @@ const description = 'Find the greatest common divisor of given numbers.';
  * @returns {string} round expected answer: greatest common divisor of these numbers
  */
 const generateRound = (range = 100) => {
-  const num1 = getRandom(range, minValue);
-  const num2 = getRandom(range, minValue);
+  const num1 = getRandom(range, 1);
+  const num2 = getRandom(range, 1);
   const [min, max] = [num1, num2].sort();
 
   return {
